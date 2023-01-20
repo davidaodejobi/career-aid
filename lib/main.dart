@@ -1,7 +1,12 @@
+import 'package:career_aid/controller/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  await ScreenUtil.ensureScreenSize();
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -9,13 +14,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Home(),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(
+          375.0,
+          812.0,
+        ),
+        builder: (context, child) {
+          return MaterialApp(
+            title: 'Career Aid',
+            theme: AppTheme.light(),
+            home: const Home(),
+          );
+        });
   }
 }
 
