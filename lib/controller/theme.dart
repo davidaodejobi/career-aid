@@ -38,6 +38,9 @@ class AppTheme extends ChangeNotifier {
       inputDecorationTheme: const InputDecorationTheme(
         border: InputBorder.none,
       ),
+      checkboxTheme: CheckboxThemeData(
+        fillColor: MaterialStateProperty.all(AppColor.kLightPrimaryColor),
+      ),
       appBarTheme: const AppBarTheme(
         color: Colors.transparent,
         elevation: 0,
