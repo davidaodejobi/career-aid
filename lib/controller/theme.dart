@@ -14,15 +14,25 @@ class AppTheme extends ChangeNotifier {
         style: ElevatedButton.styleFrom(
           textStyle: TextStyle(
             fontSize: 16.sp,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w600,
           ),
           elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
           ),
           foregroundColor: const Color(0xFFFDFDFC),
           backgroundColor:
               AppColor.kLightPrimaryColor, // foreground (text) color
+        ),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          foregroundColor: AppColor.kLightPrimaryColor,
+          surfaceTintColor: AppColor.kLightPrimaryColor,
         ),
       ),
       inputDecorationTheme: const InputDecorationTheme(
@@ -58,7 +68,7 @@ class AppTheme extends ChangeNotifier {
           fontSize: 30.0.sp,
           fontFamily: 'DMSans',
           color: AppColor.kLightPrimaryColor,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w800,
         ),
         headline4: TextStyle(
           fontSize: 26.0.sp,

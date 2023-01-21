@@ -27,7 +27,7 @@ class CompleteButton extends ConsumerWidget {
         child: Center(
           child: Text(
             'Get Started',
-            style: Theme.of(context).textTheme.headline5!.copyWith(
+            style: Theme.of(context).textTheme.headline6!.copyWith(
                   color: Colors.white,
                 ),
           ),
