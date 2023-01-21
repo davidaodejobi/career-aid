@@ -1,3 +1,4 @@
+import 'package:career_aid/constant/app_color.dart';
 import 'package:career_aid/controller/onbaording/onboarding_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,7 +13,7 @@ class SkipButton extends ConsumerWidget {
     final onBoardingProvider = ref.watch(onboardingController);
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white.withAlpha(100),
+        backgroundColor: AppColor.kLightSecondaryColor.withAlpha(100),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),

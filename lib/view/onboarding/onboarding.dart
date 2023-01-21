@@ -14,6 +14,7 @@ class Onboarding extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           children: [
@@ -22,28 +23,28 @@ class Onboarding extends StatelessWidget {
               children: [
                 OnboardingPage(
                   size: size,
-                  imageUrl: 'assets/images/splash.png',
+                  imageUrl: 'assets/images/onboard1.png',
                   title: 'Welcome to CareerAid',
                   description:
-                      'CareerAid is a platform that helps you to manage your business and make it grow faster and better than ever',
+                      'CareerAid makes your job, grant and scholarship search easy and efficient. Say goodbye to the stress and hassle of job, grants and scholarship hunting, CareerAid is here to help.',
                   page: OnboardPage.one,
                   pageController: pageController,
                 ),
                 OnboardingPage(
                   size: size,
-                  imageUrl: 'assets/images/splash.png',
-                  title: 'Welcome to CareerAid',
+                  imageUrl: 'assets/images/onboard2.png',
+                  title: 'Get Ahead with CareerAid',
                   description:
-                      'CareerAid is a platform that helps you to manage your business and make it grow faster and better than ever',
+                      'Our user-friendly platform and WhatsApp integration will help you land your dream job or scholarship with ease. Create your profile, find matching opportunities, get tips and resources to prepare for interviews.',
                   page: OnboardPage.two,
                   pageController: pageController,
                 ),
                 OnboardingPage(
                   size: size,
-                  imageUrl: 'assets/images/splash.png',
-                  title: 'Welcome to CareerAid',
+                  imageUrl: 'assets/images/onboard3.png',
+                  title: 'Give back to the community',
                   description:
-                      'CareerAid is a platform that helps you to manage your business and make it grow faster and better than ever',
+                      'Our platform not only allows you to find volunteer opportunities and connect with local non-profit organizations, but also gives you the opportunity to share your experience and advice with others seeking jobs, grants, and scholarships.',
                   page: OnboardPage.three,
                   pageController: pageController,
                 ),
@@ -59,8 +60,8 @@ class Onboarding extends StatelessWidget {
                   jumpScale: 2.0,
                   dotColor: Colors.white,
                   activeDotColor: AppColor.kLightAccentColor,
-                  dotHeight: 12,
-                  dotWidth: 12,
+                  dotHeight: 8,
+                  dotWidth: 8,
                   spacing: 8,
                 ),
               ),

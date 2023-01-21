@@ -2,6 +2,7 @@ import 'package:career_aid/constant/constant.dart';
 import 'package:career_aid/view/onboarding/widget/complete_button.dart';
 import 'package:career_aid/view/shared/shared.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({
@@ -49,21 +50,21 @@ class OnboardingPage extends StatelessWidget {
         Expanded(
           child: Container(
             decoration: BoxDecoration(
-              color: AppColor.kLighTrimaryTextColor,
+              color: AppColor.kLightPrimaryColor,
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(page == OnboardPage.one ? 40 : 0),
-                topRight: Radius.circular(page == OnboardPage.three ? 40 : 0),
+                topLeft: Radius.circular(page == OnboardPage.one ? 42.w : 0),
+                topRight: Radius.circular(page == OnboardPage.three ? 40.w : 0),
               ),
             ),
             // height: double.infinity,
             width: size.width,
-            child: Padding(
-              padding: const EdgeInsets.only(
+            child: RPadding(
+              padding: REdgeInsets.only(
                 top: 40,
                 left: 16,
                 right: 16,
                 bottom: 20,
-              ),
+              ).w,
               child: Stack(
                 children: [
                   Column(
@@ -74,7 +75,7 @@ class OnboardingPage extends StatelessWidget {
                           Text(
                             title,
                             style:
-                                Theme.of(context).textTheme.headline3!.copyWith(
+                                Theme.of(context).textTheme.headline4!.copyWith(
                                       color: Colors.white,
                                     ),
                           ),
@@ -83,7 +84,7 @@ class OnboardingPage extends StatelessWidget {
                             description,
                             textAlign: TextAlign.center,
                             style:
-                                Theme.of(context).textTheme.headline5!.copyWith(
+                                Theme.of(context).textTheme.headline6!.copyWith(
                                       color: Colors.white,
                                     ),
                           ),
@@ -106,8 +107,8 @@ class OnboardingPage extends StatelessWidget {
                               );
                             },
                             child: Container(
-                              height: 45,
-                              width: 45,
+                              height: 45.h,
+                              width: 45.w,
                               decoration: BoxDecoration(
                                 color: AppColor.kLightAccentColor,
                                 borderRadius: BorderRadius.circular(12),
