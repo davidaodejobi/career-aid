@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         builder: (context, child) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Career Aid',
             theme: AppTheme.light(),
             home: const Home(),
