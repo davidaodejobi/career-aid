@@ -1,6 +1,5 @@
+import 'package:career_aid/view/arch/arch.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../main.dart';
 
 skipWhatsAppVerification(BuildContext context) {
   showDialog(
@@ -17,7 +16,7 @@ skipWhatsAppVerification(BuildContext context) {
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: ((context) => const Home()),
+                  builder: ((context) => const Arch()),
                 ),
                 (route) => false,
               );

@@ -1,4 +1,4 @@
-import 'package:career_aid/main.dart';
+import 'package:career_aid/view/arch/arch.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -27,7 +27,7 @@ successDialog(BuildContext context) {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: ((context) => const Home()),
+          builder: ((context) => const Arch()),
         ),
         (route) => false,
       );

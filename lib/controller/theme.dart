@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppTheme extends ChangeNotifier {
   static ThemeData light() {
     return ThemeData.light().copyWith(
-      useMaterial3: true,
+      // useMaterial3: true,
       iconTheme: const IconThemeData(
         color: AppColor.kLightPrimaryColor,
       ),
@@ -116,6 +116,9 @@ class AppTheme extends ChangeNotifier {
           fontWeight: FontWeight.w400,
         ),
       ),
+      colorScheme: ColorScheme.fromSwatch()
+          .copyWith(primary: AppColor.kLightPrimaryColor)
+          .copyWith(secondary: AppColor.kLightPrimaryColor),
     );
   }
 
