@@ -7,4 +7,19 @@ extension StringExtension on String {
   String capitalize() {
     return toUpperCase();
   }
+
+  String truncateWords(int wordCount) {
+    final words = split(' ');
+    if (words.length <= wordCount) {
+      return this;
+    }
+    return '${words.take(wordCount).join(' ')}...';
+  }
+
+  String truncateCharacters(int charCount) {
+    if (length <= charCount) {
+      return this;
+    }
+    return '${substring(0, charCount)}...';
+  }
 }

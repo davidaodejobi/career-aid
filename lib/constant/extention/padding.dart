@@ -55,4 +55,22 @@ extension AppPadding on Widget {
       child: this,
     );
   }
+
+  Widget padtop(double value) {
+    return RPadding(
+      padding: REdgeInsets.only(
+        top: ScreenUtil().setHeight(value),
+      ),
+      child: this,
+    );
+  }
+
+  Widget padbottom(double value) {
+    return RPadding(
+      padding: REdgeInsets.only(
+        bottom: ScreenUtil().setHeight(value),
+      ),
+      child: this,
+    );
+  }
 }
