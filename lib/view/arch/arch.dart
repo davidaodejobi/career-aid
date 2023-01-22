@@ -1,4 +1,5 @@
 import 'package:career_aid/constant/constant.dart';
+import 'package:career_aid/view/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
@@ -12,32 +13,29 @@ class Arch extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final archProvider = ref.watch(archController);
     return Scaffold(
-      body: [
-        const Center(
-          child: Text(
-            'Learn',
-            style: TextStyle(fontSize: 30),
-          ),
-        ),
-        const Center(
+      //**this could be simplifed and written in a more simpler way using things
+      //* a maap to loop through the list or by using an explicit looping method /
+      body: IndexedStack(index: archProvider.currentIndex, children: const [
+        Home(),
+        Center(
           child: Text(
             'Relearn',
             style: TextStyle(fontSize: 30),
           ),
         ),
-        const Center(
+        Center(
           child: Text(
             'Unlearn',
             style: TextStyle(fontSize: 30),
           ),
         ),
-        const Center(
+        Center(
           child: Text(
             'Unlearn',
             style: TextStyle(fontSize: 30),
           ),
         ),
-      ][archProvider.currentIndex],
+      ]),
       bottomNavigationBar: NavigationBar(
         surfaceTintColor: Colors.white,
         selectedIndex: archProvider.currentIndex,

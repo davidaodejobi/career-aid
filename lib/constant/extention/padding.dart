@@ -46,4 +46,13 @@ extension AppPadding on Widget {
       child: this,
     );
   }
+
+  Widget padright(double value) {
+    return RPadding(
+      padding: REdgeInsets.only(
+        right: ScreenUtil().setWidth(value),
+      ),
+      child: this,
+    );
+  }
 }
