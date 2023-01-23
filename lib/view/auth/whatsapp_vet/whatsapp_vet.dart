@@ -38,6 +38,12 @@ class WhatsAppVet extends ConsumerWidget {
             ).padleft(20),
             const YMargin(20),
             TextFieldWithHeader(
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your WhatsApp number';
+                }
+                return null;
+              },
               title: 'WhatsApp number',
               controller: TextEditingController(),
               keyboardType: TextInputType.number,

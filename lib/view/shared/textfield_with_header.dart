@@ -1,19 +1,25 @@
-import 'package:career_aid/constant/constant.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
+import 'package:career_aid/constant/constant.dart';
 
 class TextFieldWithHeader extends StatelessWidget {
   final String title;
   final TextEditingController controller;
   final String hintText;
   final TextInputType keyboardType;
+  final String? Function(String?) validator;
+  // final GlobalKey<FormState>? formKey;
 
   const TextFieldWithHeader({
-    super.key,
+    Key? key,
     required this.title,
     required this.controller,
     this.hintText = '',
     this.keyboardType = TextInputType.text,
-  });
+    required this.validator,
+    // this.formKey,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +36,10 @@ class TextFieldWithHeader extends StatelessWidget {
         TextFormField(
           //change curor color
           controller: controller,
-
-          // validator: validator,
+          validator: validator,
+          // onSaved: (value) {
+          //   controller.text = value!;
+          // },
           cursorColor: AppColor.kLightPrimaryColor,
           style: Theme.of(context).textTheme.bodyText1,
           keyboardType: keyboardType,
@@ -70,6 +78,7 @@ class PassTextFieldWithHeader extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscureText;
   final VoidCallback hideAction;
+  final String? Function(String?) validator;
 
   const PassTextFieldWithHeader({
     Key? key,
@@ -79,6 +88,7 @@ class PassTextFieldWithHeader extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     required this.hideAction,
+    required this.validator,
   }) : super(key: key);
 
   @override
@@ -95,6 +105,7 @@ class PassTextFieldWithHeader extends StatelessWidget {
         const SizedBox(height: 10.0),
         TextFormField(
           controller: controller,
+          validator: validator,
           cursorColor: AppColor.kLightPrimaryColor,
           style: Theme.of(context).textTheme.bodyText1,
           keyboardType: keyboardType,

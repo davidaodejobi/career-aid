@@ -39,12 +39,24 @@ class SignIn extends StatelessWidget {
             ).padleft(20),
             const YMargin(50),
             TextFieldWithHeader(
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your email';
+                }
+                return null;
+              },
               title: 'Email',
               controller: TextEditingController(),
               keyboardType: TextInputType.emailAddress,
             ),
             const YMargin(20),
             PassTextFieldWithHeader(
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter your password';
+                }
+                return null;
+              },
               hideAction: () {},
               obscureText: true,
               title: 'Password',
