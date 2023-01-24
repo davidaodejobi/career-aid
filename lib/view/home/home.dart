@@ -1,13 +1,17 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 
+import 'package:career_aid/service/service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get_it/get_it.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'package:career_aid/constant/constant.dart';
 import 'package:career_aid/view/shared/shared.dart';
+
+final hiveDB = GetIt.I.get<HiveStorageService>();
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -21,9 +25,10 @@ class Home extends StatelessWidget {
       'System Design',
       'OOP',
     ];
+    // String name = hiveDB.readItem(key: name);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hi Bella'),
+        title: const Text('Hi there'),
         leading: const CircleAvatar(
           radius: 30,
           backgroundImage: NetworkImage(
@@ -309,31 +314,31 @@ class CarouselState extends State<Carousel> {
   List slides = [
     const InfoCard(
       imageUrl: 'https://picsum.photos/200/400',
-      topic: 'Outreachy is current;y out',
+      topic: 'Outreachy is currently out',
       description:
           'Outreachy expressly invites women (both cis and trans), trans men, and genderqueer people to apply. We also expressly invite applications from residents and nationals of the United States of any gender who are Black/African American, Hispanic/Latinx, Native American/American Indian, Alaska Native, Native Hawaiian, or Pacific Islander.',
     ),
     const InfoCard(
       imageUrl: 'https://picsum.photos/300/300',
-      topic: 'Outreachy is current;y out',
+      topic: 'Outreachy is currently out',
       description:
           'Outreachy expressly invites women (both cis and trans), trans men, and genderqueer people to apply. We also expressly invite applications from residents and nationals of the United States of any gender who are Black/African American, Hispanic/Latinx, Native American/American Indian, Alaska Native, Native Hawaiian, or Pacific Islander.',
     ),
     const InfoCard(
       imageUrl: 'https://picsum.photos/400/400',
-      topic: 'Outreachy is current;y out',
+      topic: 'Outreachy is currently out',
       description:
           'Outreachy expressly invites women (both cis and trans), trans men, and genderqueer people to apply. We also expressly invite applications from residents and nationals of the United States of any gender who are Black/African American, Hispanic/Latinx, Native American/American Indian, Alaska Native, Native Hawaiian, or Pacific Islander.',
     ),
     const InfoCard(
       imageUrl: 'https://picsum.photos/200/400',
-      topic: 'Outreachy is current;y out',
+      topic: 'Outreachy is currently out',
       description:
           'Outreachy expressly invites women (both cis and trans), trans men, and genderqueer people to apply. We also expressly invite applications from residents and nationals of the United States of any gender who are Black/African American, Hispanic/Latinx, Native American/American Indian, Alaska Native, Native Hawaiian, or Pacific Islander.',
     ),
     const InfoCard(
       imageUrl: 'https://picsum.photos/500/500',
-      topic: 'Outreachy is current;y out',
+      topic: 'Outreachy is currently out',
       description:
           'Outreachy expressly invites women (both cis and trans), trans men, and genderqueer people to apply. We also expressly invite applications from residents and nationals of the United States of any gender who are Black/African American, Hispanic/Latinx, Native American/American Indian, Alaska Native, Native Hawaiian, or Pacific Islander.',
     )

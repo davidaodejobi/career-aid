@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:career_aid/controller/auth/sign_up_controller.dart';
+import 'package:career_aid/service/service.dart';
 import 'package:career_aid/view/auth/signin/sign_in.dart';
 import 'package:flutter/material.dart';
 
@@ -51,6 +52,7 @@ class SignUp extends StatelessWidget {
 }
 
 final controller = GetIt.I.get<SignupController>();
+final hiveDB = GetIt.I.get<HiveStorageService>();
 
 class TextfieldsWithButton extends StatefulWidget {
   const TextfieldsWithButton({
@@ -141,6 +143,7 @@ class Button extends ConsumerWidget {
       isCompleted: signupProvider.isSigningIn,
       onPressed: () {
         if (controller.validateAndSubmit()) {
+          hiveDB.storeItem(key: name, value: controller.nameController.text);
           signupProvider.submit(context);
         }
       },
