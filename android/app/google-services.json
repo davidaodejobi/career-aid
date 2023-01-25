@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "761228722991",
+    "project_id": "career-aid-816bf",
+    "storage_bucket": "career-aid-816bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761228722991:android:b84a1a0972df031554d7da",
+        "android_client_info": {
+          "package_name": "com.example.career_aid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761228722991-ree40ummf0rbq5mdcff9gu8iacbqhlaa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwdpdxbBBoqR0khWE-iL-10nxHAUT8tvA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761228722991-ree40ummf0rbq5mdcff9gu8iacbqhlaa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
