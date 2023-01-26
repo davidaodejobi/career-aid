@@ -1,22 +1,24 @@
+import 'package:career_aid/controller/auth/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get_it/get_it.dart';
 
-import '../../view/auth/whatsapp_vet/whatsapp_vet.dart';
+final authController = GetIt.I.get<AuthController>();
 
 class SignupController with ChangeNotifier {
   final _formKey = GlobalKey<FormState>();
   GlobalKey<FormState> get formKey => _formKey;
 
-  final _nameController = TextEditingController();
+  late TextEditingController _nameController;
   TextEditingController get nameController => _nameController;
 
-  final _emailController = TextEditingController();
+  late TextEditingController _emailController;
   TextEditingController get emailController => _emailController;
 
-  final _passwordController = TextEditingController();
+  late TextEditingController _passwordController;
   TextEditingController get passwordController => _passwordController;
 
-  final _confirmPasswordController = TextEditingController();
+  late TextEditingController _confirmPasswordController;
   TextEditingController get confirmPasswordController =>
       _confirmPasswordController;
 
@@ -58,6 +60,13 @@ class SignupController with ChangeNotifier {
     notifyListeners();
   }
 
+  void init() {
+    _nameController = TextEditingController();
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    _confirmPasswordController = TextEditingController();
+  }
+
   @override
   void dispose() {
     _nameController.dispose();
@@ -76,19 +85,28 @@ class SignupController with ChangeNotifier {
     return true;
   }
 
-  void submit(BuildContext context) {
+  void submit(
+    BuildContext context, {
+    required String email,
+    required String password,
+  }) {
     startLoading();
     _isSigningIn = true;
     notifyListeners();
-    Future.delayed(const Duration(seconds: 3), () {}).then((value) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const WhatsAppVet(),
-        ),
-      );
-      stopLoading();
-    });
+    authController.signWithEmail(
+      email: email,
+      password: password,
+      context: context,
+    );
+    stopLoading();
+    // Future.delayed(const Duration(seconds: 3), () {}).then((value) {
+    //   Navigator.pushReplacement(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (context) => const WhatsAppVet(),
+    //     ),
+    //   );
+    // });
   }
 
   //write validation method
